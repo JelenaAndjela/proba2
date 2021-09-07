@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="inzenjering:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/inzenjering_jar</output-path>
+    <root id="archive" name="inzenjering.jar">
+      <element id="module-output" name="inzenjering" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fuseki-server.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jFuzzyLogic.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jCOLIBRI-3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/unbbayes-4.22.18.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xml:base="https://github.com/JelenaAndjela/inzenjering2021.git/attacks"
+	xmlns:attacks="https://github.com/JelenaAndjela/inzenjering2021.git/attacks#">
+    <!--1-->
+    <rdf:Description rdf:about="#ParametarInjection">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Parametar Injection</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Implement an audit log written to a separate host. In the event of a compromise, the audit log may be able to provide evidence and details of the compromise.</attacks:mitigations>
+    </rdf:Description>
+<!--2-->
+    <rdf:Description rdf:about="#ArgumentInjection">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Argument Injection</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string"> Do not program input values directly on command shell, instead treat user input as guilty until proven innocent.</attacks:mitigations>
+    </rdf:Description>
+<!--3-->
+    <rdf:Description rdf:about="#FormatStringInjection">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Format String Injection</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Limit the usage of formatting string functions.Strong input validation.</attacks:mitigations>
+    </rdf:Description>
+<!--4-->
+    <rdf:Description rdf:about="#FlashInjection">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Flash Injection</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Implementation: remove sensitive information such as user name and password in the SWF file.Implementation: use validation on both client and server side.</attacks:mitigations>
+    </rdf:Description>
+<!--5-->
+    <rdf:Description rdf:about="#IdentitySpoofing">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Identity Spoofing</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Employ robust authentication processes (e.g., multi-factor authentication).</attacks:mitigations>
+    </rdf:Description>
+<!--6-->
+    <rdf:Description rdf:about="#Pharming">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Pharming</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">All sensitive information must be handled over a secure connection.</attacks:mitigations>
+    </rdf:Description>
+<!--7-->
+    <rdf:Description rdf:about="#Phishing">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Phishing</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Do not follow any links that you receive within your e-mails and certainly do not input any login credentials on the page that they take you too.</attacks:mitigations>
+    </rdf:Description>
+<!--8-->
+    <rdf:Description rdf:about="#DNS_Rebinding">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">DNS Rebinding</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">IP Pinning causes browsers to record the IP address to which a given name resolves and continue using this address regardless of the TTL set in the DNS response.</attacks:mitigations>
+    </rdf:Description>
+<!--9-->
+    <rdf:Description rdf:about="#TokenImpersonation">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Token Impersonation</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Integrity Alter Execution Logic By faking the source of data or services, an adversary can cause a target to make incorrect decisions about how to proceed.</attacks:mitigations>
+    </rdf:Description>
+<!--10-->
+    <rdf:Description rdf:about="#TerrestrialJamming">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Terrestrial Jamming</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Availability Other A successful attack will deny, degrade, or disrupt availability of satellite communications for the target by overwhelming its resources to accurately receive authorized transmissions.</attacks:mitigations>
+    </rdf:Description>
+<!--11-->
+    <rdf:Description rdf:about="#ResourceLocationSpoofing">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Resource Location Spoofing</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Monitor network activity to detect any anomalous or unauthorized communication exchanges.</attacks:mitigations>
+    </rdf:Description>
+<!--12-->
+    <rdf:Description rdf:about="#ActionSpoofing">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Action Spoofing</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Avoid interacting with suspicious sites or clicking suspicious links.</attacks:mitigations>
+    </rdf:Description>
+<!--13-->
+    <rdf:Description rdf:about="#Clickjacking">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Clickjacking</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string"> very high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">A victim has an authenticated session with a site that provides an electronic payment service to transfer funds between subscribing members. </attacks:mitigations>
+    </rdf:Description>
+<!--14-->
+    <rdf:Description rdf:about="#TaskImpersonation">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Task Impersonation</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string"> very high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">An adversary monitors the system task list for Microsoft Outlook in an attempt to determine when the application may prompt the user to enter their credentials to view encrypted email.</attacks:mitigations>
+    </rdf:Description>
+<!--15-->
+    <rdf:Description rdf:about="#SoftwareIntegrityAttack">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Software Integrity Attack</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:mitigations>
+    </rdf:Description>
+<!--16-->
+    <rdf:Description rdf:about="#MaliciousSoftwareUpdate">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Malicious Software Update</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">very high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Validate software updates before installing</attacks:mitigations>
+    </rdf:Description>
+<!--17-->
+    <rdf:Description rdf:about="#ManipulateHumanBehavior">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Manipulate Human Behavior</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">An organization should provide regular, robust cybersecurity training to its employees to prevent successful social engineering attacks.</attacks:mitigations>
+    </rdf:Description>
+<!--18-->
+    <rdf:Description rdf:about="#InfluencePerception">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Influence Perception</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">An organization should provide regular, robust cybersecurity training to its employees to prevent social engineering attacks.</attacks:mitigations>
+    </rdf:Description>
+<!--19-->
+    <rdf:Description rdf:about="#RouteDisabling">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Route Disabling</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Availability Other Disabling a network route denies the availability of a service.</attacks:mitigations>
+    </rdf:Description>
+<!--20-->
+    <rdf:Description rdf:about="#Blockage">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Blockage</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Availability Other Blocking a resource from functional operation denies its availability to authorized users.</attacks:mitigations>
+    </rdf:Description>
+<!--21-->
+    <rdf:Description rdf:about="#ParametarInjection">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Parametar Injection</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:mitigations>
+    </rdf:Description>
+<!--22-->
+    <rdf:Description rdf:about="#Pretexting">
+    		<rdf:type rdf:resource="#Attack"/>
+    		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Pretexting</attacks:name>
+    	    <attacks:likelihood_of_attack rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:likelihood_of_attack>
+    		<attacks:typical_severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:typical_severity>
+    		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+	     	<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+    		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">The adversary dresses up like a jogger and runs in place by the entrance of a building, pretending to look for their access card. </attacks:mitigations>
+    </rdf:Description>
+
+
+
+</rdf:RDF>

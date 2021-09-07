@@ -1,0 +1,87 @@
+
+FUNCTION_BLOCK sablon
+
+VAR_INPUT               // ulazne varijablen
+    availability: REAL;
+    confidentiality: REAL;
+    integrity: REAL;
+    scope : REAL;
+    user_interaction: REAL;
+    complexity: REAL;
+    severity: REAL;
+END_VAR
+
+VAR_OUTPUT              // izlazne varijable
+	risk : REAL;
+END_VAR
+
+FUZZIFY availability
+	TERM none := (0, 1) (10, 1) (15, 0);
+	TERM low := (10, 0) (20, 1) (50, 0);
+	TERM high := (40, 0) (70, 1) (100 ,1)
+END_FUZZIFY
+
+FUZZIFY confidentiality
+	TERM none := (0, 1) (20, 0);
+	TERM low := (10, 0) (40, 1) (70, 0);
+	TERM high := (60, 0) (100 ,1);
+END_FUZZIFY
+
+FUZZIFY integrity
+	TERM unchanged := (0, 1) (100, 0);
+	TERM changed := (0, 0) (100, 1);
+END_FUZZIFY
+
+FUZZIFY scope
+	TERM unchanged := (0, 1) (100, 0);
+    TERM changed := (0,0) (100,1);
+END_FUZZIFY
+
+FUZZIFY user_interaction
+	TERM none := (0, 1) (100, 0);
+	TERM required := (0, 0) (100, 1)
+END_FUZZIFY
+
+FUZZIFY complexity
+	TERM low := (0, 1) (10, 1) (20, 0);
+	TERM high := (15, 0) (50, 1) (100, 1)
+END_FUZZIFY
+
+FUZZIFY severity
+	TERM low := (0, 1) (10, 1) (20, 0);
+	TERM medium := (15, 0) (40, 1) (50,1) (70, 0);
+	TERM high := (50,0) (70,1) (100,1);
+END_FUZZIFY
+
+DEFUZZIFY risk
+	TERM low := (0,1) (20,0);
+    TERM medium := (10,0) (30,1) (60,1) (80,0);
+    TERM high := (70,0) (100,1);
+	METHOD : COG;		// 'Center Of Gravity' odn. centar mase (koristi se i MM odn. mean max)
+	DEFAULT := 0;		// podrazumevana vrednost (ukoliko nijedno pravilo nije aktivirano)
+END_DEFUZZIFY
+
+RULEBLOCK blok1
+	AND : MIN;			// za konjunkciju se koristi minimum (samim tim sa za disjunkciju koristi maksimum)
+	ACT : MIN;			// za zaključivanje (implikaciju) je izabran minimum (Mamdani implikacija) (osim MIN koristi se i PROD)
+	ACCU : MAX;			// za kompoziciju je izabran maksimum (osim MAX koristi se i SUM)
+
+	RULE 1 : IF severity IS low THEN risk IS low WITH 7 ;
+	RULE 2 : IF user_interaction IS none THEN risk IS high WITH 80 ;
+	RULE 3 : IF user_interaction IS required THEN risk IS medium WITH 60 ;
+	RULE 4 : IF severity IS low AND user_interaction IS required THEN risk IS medium WITH 50 ;
+	RULE 5 : IF severity IS high THEN risk IS high with 80 ;
+	RULE 6 : IF complexity IS low AND user_interaction IS none THEN risk IS high WITH 90;
+	RULE 7 : IF complexity IS high AND severity IS medium THEN risk IS medium WITH 70;
+	RULE 8 : IF scope IS changed THEN risk IS medium WITH 30;
+	RULE 9 : IF scope IS changed AND availability IS high THEN risk IS high WITH 80;
+	RULE 10 : IF integrity IS changed AND severity IS medium THEN risk IS medium WITH 60;
+	RULE 11 : IF integrity IS changed AND user_interaction IS none THEN risk IS high WITH 90;
+    RULE 12 : IF scope IS changed AND confidentiality IS none THEN risk IS medium WITH 30;
+    RULE 13 : IF availability IS none THEN risk is low WITH 10;
+    RULE 14 : IF scope IS changed AND availability IS low THEN risk IS medium WITH 30;
+    RULE 15 : IF confidentiality IS none AND user_interaction IS required THEN risk IS low with 20;
+
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
